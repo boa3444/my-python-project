@@ -6,7 +6,7 @@ print(''' Rules:
  3. Read the hints thoroughly.
 ''')
 
-user_input= input("Type your name.")
+user_input= input("Type your name. \n")
 print(f"Welcome {user_input}")
 
 list1= [1,2,3,4,5,6,7,8,9,10]
