@@ -1,9 +1,8 @@
 print("Perfect song for the moment!")
 print("For what occasion or moment do you want the music to be suited...\n"
 "1. Fantasy vibes\n"
-"2. Post breakup music\n"
-"3. Classical music\n"
-"4. Rap beats")
+"2. Classical music\n"
+"3. Rap beats")
 user_input1= input("Press Enter to continue")
 
 Fantasy_vibes =  [
@@ -89,9 +88,8 @@ Rap_beats= [
 import random
 
 user_input2 = int(input("Choose (1) for Fantasy vibes\n"
-"(2) for Post breakup music\n"
-"(3) for Classical music\n"
-"(4) for Rap beats \n"))
+"(2) for Classical music\n"
+"(3) for Rap beats \n"))
 
 
 newlist= []
@@ -100,15 +98,13 @@ if user_input2 == 1:
     print(f" Your music of the moment is : {random.choice(newlist)}")
 
 
-if user_input2 == 2:
-    newlist.extend(Post_breakup_music)
-    print(f" Your music of the moment is : {random.choice(newlist)}")
 
-if user_input2 == 3:
+
+if user_input2 == 2:
     newlist.extend(Classical_music)
     print(f" Your music of the moment is : {random.choice(newlist)}")
 
-if user_input2 == 4:
+if user_input2 == 3:
     newlist.extend(Rap_beats)
     print(f" Your music of the moment is : {random.choice(newlist)}")
 
