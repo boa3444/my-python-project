@@ -1,6 +1,7 @@
     
 
 member_list = []
+checkbox_to_go_further = []
 def register_names():   
     not_stop = True
     
@@ -24,6 +25,7 @@ class MembersCheck:
     
     
     def check(self):
+        
             
             if len(member_list) ==1 :
                 print(f"Welcome in the virtual library, {member_list[0]}!")
@@ -39,10 +41,14 @@ class MembersCheck:
                 
                     if item == greet:
                         print(f"Welcome in the virtual library, {item}!")
+                        checkbox_to_go_further.append('y')
                         break
                     
                 else:
                     print("Sorry but that name was not registered as a member in the virtual library.")
+                    
+                    
+
                         
                     
                 
