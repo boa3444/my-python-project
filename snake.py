@@ -1,5 +1,5 @@
 from turtle import Turtle, Screen
-import time
+
 
 my_scr = Screen()
 
@@ -11,38 +11,56 @@ coordinates = [(0,0), (-20, 0), (-40,0)]
 class Snake():
     def __init__(self):
         self.segments = []
+       
+    
         
-    def body(self):
-
-        for coordinate in coordinates:
+    def body(self, coordinate):
+            
+       
             segment= Turtle("square")
             segment.color("white")
             segment.shapesize(1)
-            segment.speed(3)
+            segment.speed("fastest")
             self.segments.append(segment)
             segment.penup()
             segment.goto(coordinate)
+            # # 
+
+            # for each in self.segments:
+            #     if naag.head.distance(each.pos())< 10:
+            #          game_ob = False
+            #          break
+    
+    def create_body(self):
+        for coordinate in coordinates:
+            self.body(coordinate)
                 
 
 
         self.head = self.segments[0]
-        return self.head
+        # return self.head
 
-
+    def inc_len(self):
+        
+        self.body(self.segments[-1].pos())
+        # self.segments.append(new_segment)
+    
+            
+         
     def movement(self):
-        head= self.head
+        # head= self.head
         
         def turn_right():
-            head.setheading(0)
+            self.head.setheading(0)
 
         def turn_left():
-            head.setheading(180)
+            self.head.setheading(180)
 
         def turn_up():
-            head.setheading(90)
+            self.head.setheading(90)
 
         def turn_down():
-            head.setheading(270)
+            self.head.setheading(270)
         
             
         my_scr.listen()
@@ -58,8 +76,8 @@ class Snake():
                 
                 
 
-        for i in range(2 ,0, -1):
-                    go_to = head.pos() 
+        for i in range(len(self.segments) -1 ,0, -1):
+                    
                     take_the_front = self.segments[i-1].pos()
                     self.segments[i].goto(take_the_front)
 

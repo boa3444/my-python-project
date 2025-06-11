@@ -15,8 +15,8 @@ class SnakeFood(Turtle):
 
 
     def new_pos(self):
-        new_x = random.randint(-300,300)
-        new_y = random.randint(-300,300)
+        new_x = random.randint(-270,270)
+        new_y = random.randint(-270,270)
         self.goto(new_x, new_y)
 
 
