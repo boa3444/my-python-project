@@ -22,6 +22,8 @@ naag.create_body()
 
 #game scoreboard
 scores = ScoreBoard()
+scores.high_score()
+
 
 #snakefood
 
@@ -32,6 +34,7 @@ khaana = SnakeFood()
 
 game_on = True
 score = 0
+# highscore = 0
 
 while game_on:
 
@@ -41,33 +44,35 @@ while game_on:
     
     my_scr.update()
 
-    time.sleep(0.2)
+    time.sleep(0.1)
 
     # scores= ScoreBoard(score)
 
 
     naag.movement()
 
-    if naag.head.distance(khaana)< 12:
+            
+    #game over
+    if naag.head.xcor() > 285 or naag.head.xcor() < -285 or naag.head.ycor() > 285 or naag.head.ycor() < -285:
+        naag.reset_body()
+        scores.reset_score()
+        score = 0
+        # scores.reset_score()
+
+    if naag.head.distance(khaana) < 12:
         khaana.new_pos()
         score+=1 
-        updates_scores= scores.updating(score)
+        scores.updating(score)
         naag.inc_len()
         
-
-    if naag.head.xcor() > 285 or naag.head.xcor() < -285 or naag.head.ycor() > 285 or naag.head.ycor() < -285:
-        game_on = False
-        ScoreBoard.Gameover()
+        
 
 
+    for each in naag.segments[1:]:
 
-    for each in naag.segments:
-        if each == naag.head:
-            pass
-
-        elif naag.head.distance(each)< 10:
-                    game_on = False
-                    ScoreBoard.Gameover()
+        if naag.head.distance(each)< 10:
+                    naag.reset_body()
+                    scores.reset_score()
 
 
 

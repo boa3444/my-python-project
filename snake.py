@@ -16,7 +16,7 @@ class Snake():
         
     def body(self, coordinate):
             
-       
+        
             segment= Turtle("square")
             segment.color("white")
             segment.shapesize(1)
@@ -24,19 +24,23 @@ class Snake():
             self.segments.append(segment)
             segment.penup()
             segment.goto(coordinate)
-            # # 
 
-            # for each in self.segments:
-            #     if naag.head.distance(each.pos())< 10:
-            #          game_ob = False
-            #          break
     
     def create_body(self):
         for coordinate in coordinates:
             self.body(coordinate)
+
                 
 
 
+        self.head = self.segments[0]
+        # return self.head
+
+    def reset_body(self):
+        for each in self.segments:
+            each.goto(100000, 100000)
+        self.segments.clear()
+        self.create_body()
         self.head = self.segments[0]
         # return self.head
 
@@ -62,7 +66,7 @@ class Snake():
         def turn_down():
             self.head.setheading(270)
         
-            
+        
         my_scr.listen()
             
 
