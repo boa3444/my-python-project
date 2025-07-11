@@ -19,7 +19,7 @@ Label(root, image = tomato, bg= "light green").place(x= 230, y=250)
 
 ####timer properties
 start_click_count = 0
-time= [0,9]                                                          
+time= [24,59]                                                          
 time_label= Label(root, text= "25:00", bg= "#f26849" ,font= ("Kristen ITC", 23,"bold"))
 time_label.place(x=293, y=354)
 timer_run = True
@@ -80,7 +80,7 @@ def set_focus_mode():
 def rest_timer():
     # if run_rest_timer:
         global time
-        time = [0, 7]  
+        time = [4, 59]  
         set_rest_mode() 
         # run_focus_timer= True
         
@@ -88,7 +88,7 @@ def rest_timer():
 def focus_timer():
     # if run_focus_timer:
         global time
-        time = [0,9]
+        time = [24,59]
         set_focus_mode()
 
 
@@ -158,7 +158,7 @@ def run_timer():
         root.after(1000, run_timer)
 
     if timer_reset:
-        time = [0, 9]
+        time = [24, 59]
         reset_reminder.config(text = "Your timer has been resetted😇😇", font = ("Kristen ITC", 13,"bold"))            ###############
         root.after(2000,reset_reminder)
         timer_reset= False
