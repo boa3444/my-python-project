@@ -1,0 +1,26 @@
+{
+    "espresso": {
+        "materials": {
+            "milk":0,
+            "water": 50,
+            "coffee": 18,
+            "money" : 1.50
+        }
+    },
+    "latte": {
+        "materials": {
+            "milk": 200,
+            "water":150,
+            "coffee": 24,
+            "money" : 2.50
+        }
+    },
+    "cappuccino": {
+        "materials": {
+            "milk":100,
+            "water": 250,
+            "coffee": 24,
+            "money" : 3
+        }
+    }
+}
