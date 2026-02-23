@@ -8,6 +8,7 @@ kitty.color("medium purple")
 colors = ["red", "orange", "yellow", "green", "blue", "indigo", "purple"]
 
 
+
 screen = Screen()
 
 for side in range (3,11):
