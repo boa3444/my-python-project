@@ -1,6 +1,7 @@
 from turtle import *
 import random
 
+
 kitty = Turtle()
 kitty.shape("arrow")
 kitty.color("medium purple")
